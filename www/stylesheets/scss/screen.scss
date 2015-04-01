@@ -1,1 +1,64 @@
 @import 'vendor/bootstrap';
+
+.navbar {
+  border-bottom: 1px solid $gray-lighter;
+  margin-bottom: 0;
+  padding-top: 20px;
+  font-family: FuturaLight;
+
+  .navbar-header {
+    display: block;
+    float: none;
+    text-align: center;
+
+  }
+  .navbar-brand {
+    float: none;
+    font-family: "Times New Roman";
+    text-align: center;
+    font-size: 3em;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0px auto;
+    color: $gray-dark;
+  }
+  .navbar-nav {
+    letter-spacing: 2px;
+    font-size: 1.3em;
+    text-align: center;
+    float: none;
+    margin: 1.5em auto 0.8em;
+
+    li {
+      float: none;
+      display: inline-block;
+      border-left: 1px solid $gray-light;
+
+      &:first-child {
+        border-left: none;
+      }
+    }
+    a {
+      padding: 0px 15px 0px 20px;
+      color: $gray-light;
+      -webkit-transition: padding 200ms;
+
+      &:hover {
+        background: none;
+        padding: 0px 25px 0px 30px;
+
+      }
+
+    }
+  }
+
+}
+#intro {
+  background: url('/images/building_hero.jpg') 50% 0 fixed;
+  background-size: cover;
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  padding: 200px 0;
+}

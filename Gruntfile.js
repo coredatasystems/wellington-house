@@ -32,7 +32,8 @@ module.exports = function(grunt) {
                         server: {
                             baseDir: './www/'
                         },
-                        watchTask: true
+                        watchTask: true,
+                        injectChanges: false
                     }
                 }
             }     
