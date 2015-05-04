@@ -21,4 +21,28 @@ $(document).ready(function(){
             $scroll.css({ backgroundPosition: coords });
         }); // end window scroll
     });  // end section function
+
 }); // close out script
+
+// cache the pan value
+var totalPanValue = 0;
+
+function mapParallax(map) {
+
+
+    $(window).scroll(function() {
+        // HTML5 proves useful for helping with creating JS functions!
+        // also, negative value because we're scrolling upwards
+        var yPos = -(($window.scrollTop() - mapOffset + (windowHeight / mapHeight)) / map.parallaxSpeed);
+
+        // amountToPan
+        var yPan = yPos - totalPanValue;
+
+        // move the map
+        map.panBy(0, yPan)
+
+        //set new totalPanValue
+        totalPanValue = yPos;
+
+    }); // end window scroll
+}

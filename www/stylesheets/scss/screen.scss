@@ -1,10 +1,20 @@
 @import 'vendor/bootstrap';
 
+body {
+  background: -webkit-linear-gradient($brand-info, white);
+}
+h2 {
+  margin-top: 10px;
+}
+section {
+  background: white;
+}
 .navbar {
   border-bottom: 1px solid $gray-lighter;
   margin-bottom: 0;
   padding-top: 20px;
   font-family: FuturaLight;
+  background-color: white;
 
   .navbar-header {
     display: block;
@@ -51,7 +61,13 @@
 
     }
   }
+} /* .navbar end */
 
+.text-container {
+  padding: 20px 0;
+}
+.section-header {
+  font-size: 3em;
 }
 #intro {
   background: url('/images/building_hero.jpg') 50% 0 fixed;
@@ -60,5 +76,57 @@
   margin: 0 auto;
   width: 100%;
   position: relative;
-  padding: 200px 0;
+  padding: 150px 0;
+}
+.office-highlights {
+  box-shadow: $gray-light 0px 1px 2px;
+  font-size: 1.2em;
+
+  .panel-heading h3 {
+    font-size: 1.3em;
+  }
+  .panel-footer {
+    background-color: $brand-info;
+    color: white;
+    font-weight: bold;
+    text-align: right;
+  }
+}
+
+section.info-section {
+  background: $brand-info;
+  color: white;
+  overflow: hidden;
+}
+#address-container {
+  padding: 30px 0;
+  line-height: 50px;
+
+  #address {
+    text-align: right;
+    font-size: 1.5em;
+    margin-bottom: 0;
+  }
+  h2 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  @media(max-width: $screen-xs-max){
+    #address, h2 {
+      text-align: center;
+    }
+  }
+}
+#map-canvas {
+  width: 100%;
+  height: 100%;
+}
+section.enquiries-section {
+  background: -webkit-linear-gradient(lighten($brand-info, 42%), white);
+}
+footer section {
+  padding-top: 20px;
 }
