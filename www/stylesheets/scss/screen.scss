@@ -1,10 +1,26 @@
 @import 'vendor/bootstrap';
 
+html {
+  height: 100%;
+  width: 100%;
+}
 body {
   background: -webkit-linear-gradient($brand-info, white);
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  -webkit-perspective: 10px;
+}
+h1 {
+  font-size: 4em;
+  color: white;
+  text-shadow: black 0px 0px 3px;
 }
 h2 {
-  margin-top: 10px;
+  margin-top: 20px;
+}
+a {
+  text-decoration: underline;
 }
 section {
   background: white;
@@ -12,10 +28,47 @@ section {
 .navbar {
   border-bottom: 1px solid $gray-lighter;
   margin-bottom: 0;
-  padding-top: 20px;
+  padding-top: 30px;
   font-family: FuturaLight;
   background-color: white;
+  border-radius: 0px;
 
+  .container {
+    position: relative;
+  }
+  .navbar-icon {
+    height: 70px;
+    display: block;
+    position: absolute;
+    @media (max-width: $screen-md-min) {
+      display: none;
+    }
+  }
+  .navbar-info {
+    position: absolute;
+    float: right;
+    text-align: right;
+    font-family: $font-family-sans-serif;
+    font-size: 17px;
+    line-height: 0.8em;
+    top: 16px;
+    right: 0;
+
+    br {
+      display: none;
+    }
+
+    @media (max-width: $screen-lg-min) {
+      br {
+        display: inline;
+      }
+      top: -10px;
+      line-height: 1.2em;
+    }
+    @media (max-width: $screen-md-min) {
+      display: none;
+    }
+  }
   .navbar-header {
     display: block;
     float: none;
@@ -31,6 +84,12 @@ section {
     font-weight: bold;
     margin: 0px auto;
     color: $gray-dark;
+  }
+  .navbar-toggle .icon-bar {
+    background-color: black;
+  }
+  a {
+    text-decoration: none;
   }
   .navbar-nav {
     letter-spacing: 2px;
@@ -69,14 +128,21 @@ section {
 .section-header {
   font-size: 3em;
 }
-#intro {
-  background: url('/images/building_hero.jpg') 50% 0 fixed;
-  background-size: cover;
+.intro {
+  &.index {
+    background: url('/images/building_hero.jpg') 50% 0 fixed;
+    background-size: cover;
+    padding: 150px 0;
+  }
+  &.office-space {
+    background: url('/images/view_hero.jpg') 50% -40% fixed;
+    padding: 80px 0;
+  }
   height: auto;
   margin: 0 auto;
   width: 100%;
   position: relative;
-  padding: 150px 0;
+
 }
 .office-highlights {
   box-shadow: $gray-light 0px 1px 2px;
@@ -126,6 +192,21 @@ section.info-section {
 }
 section.enquiries-section {
   background: -webkit-linear-gradient(lighten($brand-info, 42%), white);
+
+  .form-horizontal {
+    margin-bottom: 50px;
+
+    textarea {
+      height: 100px;
+    }
+  }
+}
+.client {
+  border-top: 1px solid $gray-lighter;
+  padding: 20px;
+  &:first-child {
+    border-top: none;
+  }
 }
 footer section {
   padding-top: 20px;
