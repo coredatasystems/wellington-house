@@ -1,0 +1,335 @@
+@import 'vendor/bootstrap';
+
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background: -webkit-linear-gradient($brand-info, white);
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  -webkit-perspective: 10px;
+}
+h1 {
+  font-size: 4em;
+  color: white;
+  text-shadow: black 0px 0px 3px;
+}
+h2 {
+  margin-top: 20px;
+}
+a {
+  text-decoration: underline;
+}
+section {
+  background: white;
+}
+.navbar {
+  border-bottom: 1px solid $gray-lighter;
+  margin-bottom: 0;
+  padding-top: 30px;
+  font-family: FuturaLight;
+  background-color: white;
+  border-radius: 0px;
+
+  .container {
+    position: relative;
+  }
+
+  .navbar-icon {
+    height: 70px;
+    display: block;
+    position: absolute;
+    @media (max-width: $screen-md-min) {
+      display: none;
+    }
+  }
+  .navbar-info {
+    position: absolute;
+    float: right;
+    text-align: right;
+    font-family: $font-family-sans-serif;
+    right: 0;
+    line-height: 1.2em;
+    top: -10px;
+    font-size: 1.15em;
+
+    @media (max-width: $screen-md-min) {
+      display: none;
+    }
+    @media (max-width: $screen-lg-min) {
+      font-size: 1.05em;
+    }
+  }
+  .navbar-header {
+    display: block;
+    float: none;
+    text-align: center;
+
+  }
+  .navbar-brand {
+    float: none;
+    font-family: "Times New Roman";
+    text-align: center;
+    font-size: 3em;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0px auto;
+    color: $brand-info;
+
+    .navbar-brand-adorn {
+      display: none;
+      height: 1em;
+      vertical-align: bottom;
+      @media (max-width: $screen-md-min) {
+        display: inline;
+      }
+    }
+  }
+
+  .navbar-toggle .icon-bar {
+    background-color: black;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  .navbar-nav {
+    letter-spacing: 2px;
+    font-size: 1.3em;
+    text-align: center;
+    float: none;
+    margin: 1.5em auto 0.8em;
+
+    li {
+      float: none;
+      display: inline-block;
+      border-left: 1px solid $gray-light;
+
+      &:first-child {
+        border-left: none;
+      }
+    }
+    a {
+      padding: 0px 15px 0px 20px;
+      color: $gray-light;
+      -webkit-transition: padding 200ms;
+
+      &:hover {
+        background: none;
+        padding: 0px 25px 0px 30px;
+      }
+
+    }
+    @media (max-width: $screen-lg-min) {
+      font-size: 1.1em;
+      letter-spacing: 1.5px;
+    }
+  }
+} /* .navbar end */
+
+.text-container {
+  padding: 20px 0;
+}
+.section-header {
+  font-size: 3em;
+}
+.intro {
+  &.index {
+    background: url('/images/building_hero.jpg') 50% 0 fixed;
+    background-size: cover;
+    padding: 150px 0;
+  }
+  &.office-space {
+    background: url('/images/view_hero.jpg') 50% -40% fixed;
+    padding: 80px 0;
+  }
+  &.office-inside {
+    height: 300px;
+    background: url('/images/empty-office.png') 50% -70% fixed;
+    padding: 80px 0;
+  }
+  &.client-list {
+    background: url('/images/reception.jpg') 50% 180% fixed;
+    padding: 80px 0;
+    background-size: 100% auto;
+  }
+  &.virtual-offices {
+    background: url('/images/virtual-office.jpeg') 50% 400% fixed;
+    padding: 80px 0;
+    background-size: 100% auto;
+  }
+  &.meeting-rooms {
+    background: url('/images/meeting-rooms.jpg') 50% 10% fixed;
+    padding: 80px 0;
+    background-size: 100% auto;
+  }
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+
+}
+.office-highlights {
+  box-shadow: $gray-light 0px 1px 2px;
+  font-size: 1.2em;
+
+  .panel-heading h3 {
+    font-size: 1.3em;
+  }
+  .panel-footer {
+    background-color: $brand-info;
+    color: white;
+    font-weight: bold;
+    text-align: right;
+
+    a {
+      color: white;
+    }
+  }
+}
+
+section.info-section {
+  background: $brand-info;
+  color: white;
+  overflow: hidden;
+}
+#address-container {
+  padding: 30px 0;
+  line-height: 50px;
+
+  #address {
+    text-align: right;
+    font-size: 1.5em;
+    margin-bottom: 0;
+  }
+  h2 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  @media(max-width: $screen-xs-max){
+    #address, h2 {
+      text-align: center;
+    }
+  }
+}
+#map-canvas {
+  width: 100%;
+  height: 100%;
+}
+section.enquiries-section {
+  background: -webkit-linear-gradient(lighten($brand-info, 42%), white);
+
+  .form-horizontal {
+    margin-bottom: 50px;
+
+    textarea {
+      height: 100px;
+    }
+  }
+}
+.client {
+  border-top: 1px solid $gray-lighter;
+  padding: 20px;
+  &:first-child {
+    border-top: none;
+  }
+}
+footer section {
+  padding: 20px 0px;
+  .text-container ul {
+    font-size: 1.3em;
+    list-style: none;
+
+    li {
+      margin-top: 5px;
+    }
+  }
+  .attribution {
+    font-size: 1.3em;
+    text-align: right;
+    padding-top: 40px;
+  }
+  background-color: $gray-dark !important;
+}
+
+/* Client List Page */
+
+.client {
+  display: table;
+
+  .client-logo, .client-info {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  img {
+    height: 200px;
+    margin: 0 30px;
+    max-width: 250px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+  }
+}
+
+/* Meeting Room Booking */
+
+#meeting-room-booking {
+  table-layout: fixed;
+  text-align: center;
+
+  .wholeday {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    vertical-align: middle;
+    width: 100%;
+    color: $gray-dark;
+    height: 50px;
+    cursor: pointer;
+  }
+  .timeslot:before {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    vertical-align: middle;
+    width: 100%;
+    color: $gray-light;
+    content: 'free';
+    cursor: pointer;
+  }
+
+  .timeslot:hover {
+    background-color: lighten($brand-success, 15%);
+    &:before {
+      color: $gray;
+      content: 'book this slot';
+    }
+  }
+
+  .timeslot.temp-reserved {
+    background-color: $brand-success;
+    &:before {
+      color: $gray-lighter;
+      content: 'confirm booking below';
+    }
+  }
+  tbody td {
+    height: 60px;
+    vertical-align: middle;
+  }
+}
+
+/* Virtual Offices */
+.text-container {
+  font-size: 1.3em !important;
+}
+
+/* FAQ */
+
+.faq {
+  padding: 1em 0;
+}

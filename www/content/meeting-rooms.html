@@ -1,0 +1,152 @@
+<section class="intro meeting-rooms" data-speed="4" data-type="background">
+    <div class="container">
+        <div class="col-md-14">
+            <h1>Meeting Rooms</h1>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="text-container lead">
+
+            <h2>Hiring Meeting Rooms</h2>
+            <p>We provide the option to hire meeting rooms for a day or a number of hours whenever needed. Our meeting rooms are equipped with a number of plug sockets and projectors for giving important presentations. You can book any of our meeting rooms using our automated system below.</p>
+
+            <ul>
+                <li>Meeting room access costs £15 per hour or £90 for the full day.</li>
+                <li>Payment should be made by cash on arrival at reception the day of the booking.</li>
+            </ul>
+
+        </div>
+
+        <table id="meeting-room-booking" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Monday 25th</th>
+                    <th>Tuesday 26th</th>
+                    <th>Wednesday 27th</th>
+                    <th>Thursday 28th</th>
+                    <th>Friday 29th</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="wholeday"></td>
+                    <td class="wholeday">Book Whole Day</td>
+                    <td class="wholeday">Book Whole Day</td>
+                    <td class="wholeday">Book Whole Day</td>
+                    <td class="wholeday">Book Whole Day</td>
+                    <td class="wholeday">Book Whole Day</td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                </tr>
+                <tr>
+                    <td>10:00</td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                </tr>
+                <tr>
+                    <td>11:00</td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                </tr>
+                <tr>
+                    <td>12:00</td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                </tr>
+                <tr>
+                    <td>13:00</td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                </tr>
+                <tr>
+                    <td>14:00</td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                </tr>
+                <tr>
+                    <td>15:00</td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                </tr>
+                <tr>
+                    <td>16:00</td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                    <td class="timeslot"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+        <br/>
+        <form action="" method="POST" class="form-horizontal">
+            <div class="form-group">
+                <label for="inputName3" class="col-sm-4 control-label">Cost</label>
+                <div class="col-sm-7">
+                    <input id="subtotal" type="text" disabled="disabled" class="form-control" id="inputName3" placeholder="£0.00">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputName3" class="col-sm-4 control-label">Full Name</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="inputName3" placeholder="Full Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputName3" class="col-sm-4 control-label">Name of Business</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="inputName3" placeholder="Name of Business">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
+                <div class="col-sm-7">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-7">
+                    <script id="payment-button"
+                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="pk_test_O1R4lqAzAEMJVAKOCiGEK2tR"
+                            data-amount="2000"
+                            data-name="Wellington House"
+                            data-currency="gbp"
+                            data-description="Meeting Room Booking"
+                           >
+                    </script>
+                </div>
+            </div>
+
+        </form>
+        <br/>
+    </div><!-- /.container -->
+</section>

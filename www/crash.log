@@ -1,0 +1,158 @@
+Crashlog created at 2015-08-18 15:16:13 +0100
+
+===== MESSAGE:
+
+RuntimeError: Found 2 content files for content/javascript/bootstrap; expected 0 or 1
+
+===== COMPILATION STACK:
+
+  (empty)
+
+===== STACK TRACE:
+
+  0. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/data_sources/filesystem.rb:170:in `block in all_split_files_in'
+  1. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/data_sources/filesystem.rb:160:in `each_pair'
+  2. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/data_sources/filesystem.rb:160:in `all_split_files_in'
+  3. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/data_sources/filesystem.rb:86:in `load_objects'
+  4. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/data_sources/filesystem.rb:45:in `items'
+  5. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/base/source_data/site.rb:334:in `block in load_items'
+  6. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/base/source_data/site.rb:333:in `each'
+  7. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/base/source_data/site.rb:333:in `load_items'
+  8. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/base/source_data/site.rb:244:in `load'
+  9. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/base/source_data/site.rb:128:in `layouts'
+  10. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/base/compilation/compiler.rb:188:in `dependency_tracker'
+  11. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/base/memoization.rb:56:in `block in memoize'
+  12. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/base/compilation/compiler.rb:459:in `stores'
+  13. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/base/compilation/compiler.rb:147:in `unload'
+  14. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/base/source_data/site.rb:279:in `unload'
+  15. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/base/source_data/site.rb:259:in `rescue in load'
+  16. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/base/source_data/site.rb:263:in `load'
+  17. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/cli/command_runner.rb:63:in `load_site'
+  18. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/cli/commands/compile.rb:392:in `run'
+  19. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/cli/command_runner.rb:14:in `block in call'
+  20. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
+  21. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  22. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/cli/command_runner.rb:13:in `call'
+  23. /Library/Ruby/Gems/2.0.0/gems/cri-2.6.1/lib/cri/command_dsl.rb:223:in `block in runner'
+  24. /Library/Ruby/Gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `call'
+  25. /Library/Ruby/Gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `run_this'
+  26. /Library/Ruby/Gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:251:in `run'
+  27. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/cli/commands/nanoc.rb:39:in `block in define'
+  28. /Library/Ruby/Gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `call'
+  29. /Library/Ruby/Gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `run_this'
+  30. /Library/Ruby/Gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:251:in `run'
+  31. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/cli.rb:59:in `block in run'
+  32. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
+  33. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  34. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib/nanoc/cli.rb:57:in `run'
+  35. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/bin/nanoc:25:in `<top (required)>'
+  36. /usr/bin/nanoc:23:in `load'
+
+===== VERSION INFORMATION:
+
+nanoc 3.7.3 © 2007-2014 Denis Defreyne.
+Running ruby 2.0.0 (2014-05-08) on universal.x86_64-darwin14 with RubyGems 2.0.14.
+
+===== SYSTEM INFORMATION:
+
+Darwin MacbookAir.local 14.4.0 Darwin Kernel Version 14.4.0: Thu May 28 11:35:04 PDT 2015; root:xnu-2782.30.5~1/RELEASE_X86_64 x86_64
+
+===== INSTALLED GEMS:
+
+  CFPropertyList 2.2.8
+  bigdecimal 1.2.0
+  bourbon 4.2.1
+  bundler 1.7.12
+  celluloid 0.16.0
+  chunky_png 1.3.4
+  coderay 1.1.0
+  colored 1.2
+  compass 1.0.3
+  compass-core 1.0.3
+  compass-import-once 1.0.5
+  cri 2.6.1
+  em-websocket 0.5.1
+  eventmachine 1.0.3
+  ffi 1.9.6
+  formatador 0.2.5
+  guard 2.8.2
+  guard-livereload 2.3.1
+  guard-nanoc 1.0.2
+  hitimes 1.2.2
+  http_parser.rb 0.6.0
+  io-console 0.4.2
+  json 1.7.7
+  libxml-ruby 2.6.0
+  listen 2.7.11
+  lumberjack 1.0.9
+  method_source 0.8.2
+  minitest 4.3.2
+  multi_json 1.10.1
+  nanoc 3.7.3
+  nokogiri 1.5.6
+  pry 0.10.1
+  psych 2.0.0
+  rake 0.9.6
+  rb-fsevent 0.9.4
+  rb-inotify 0.9.5
+  rdoc 4.0.0
+  sass 3.4.7
+  slop 3.6.0
+  sqlite3 1.3.7
+  terminal-notifier 1.6.2
+  terminal-notifier-guard 1.6.4
+  test-unit 2.0.0.0
+  thor 0.19.1
+  timers 4.0.1
+
+===== ENVIRONMENT:
+
+Apple_PubSub_Socket_Render => "/private/tmp/com.apple.launchd.ClLt4Rzf1P/Render"
+COMMAND_MODE => "unix2003"
+GEM_PATH => "/Library/Ruby/Gems/2.0.0:/Users/leonaves/.gem/ruby/2.0.0:/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/gems/2.0.0"
+HOME => "/Users/leonaves"
+ITERM_PROFILE => "Default"
+ITERM_SESSION_ID => "w0t2p0"
+LANG => "en_GB.UTF-8"
+LC_CTYPE => "en_GB.UTF-8"
+LESS => "-R"
+LOGNAME => "leonaves"
+LSCOLORS => "Gxfxcxdxbxegedabagacad"
+OLDPWD => "/Users/leonaves/dev/core-static/wellington-house"
+PAGER => "less"
+PATH => "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2014basic/bin/x86_64-darwin:/Users/leonaves/.composer/vendor/bin"
+PWD => "/Users/leonaves/dev/core-static/wellington-house/www"
+SECURITYSESSIONID => "186a5"
+SHELL => "/bin/zsh"
+SHLVL => "3"
+SSH_AUTH_SOCK => "/private/tmp/com.apple.launchd.KFgsWWiH7f/Listeners"
+TERM => "screen"
+TERM_PROGRAM => "iTerm.app"
+TMPDIR => "/var/folders/8w/771l30bx20d137jqy9h0zhwr0000gn/T/"
+TMUX => "/private/var/folders/8w/771l30bx20d137jqy9h0zhwr0000gn/T/tmux-501/default,25344,9"
+TMUX_PANE => "%17"
+USER => "leonaves"
+XPC_FLAGS => "0x0"
+XPC_SERVICE_NAME => "0"
+ZSH => "/Users/leonaves/.oh-my-zsh"
+_ => "/usr/bin/nanoc"
+__CF_USER_TEXT_ENCODING => "0x1F5:0x0:0x0"
+
+===== LOAD PATHS:
+
+  0. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib
+  1. /Library/Ruby/Gems/2.0.0/gems/colored-1.2/lib
+  2. /Library/Ruby/Gems/2.0.0/gems/cri-2.6.1/lib
+  3. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.7.3/lib
+  4. /Library/Ruby/Gems/2.0.0/gems/bundler-1.7.12/lib
+  5. /Library/Ruby/Site/2.0.0
+  6. /Library/Ruby/Site/2.0.0/x86_64-darwin14
+  7. /Library/Ruby/Site/2.0.0/universal-darwin14
+  8. /Library/Ruby/Site
+  9. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby/2.0.0
+  10. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby/2.0.0/x86_64-darwin14
+  11. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby/2.0.0/universal-darwin14
+  12. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby
+  13. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0
+  14. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/x86_64-darwin14
+  15. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/universal-darwin14
