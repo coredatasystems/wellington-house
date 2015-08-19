@@ -1,3 +1,52 @@
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script>
+$(function(){
+    var total = 0;
+    var discountedTotal = 0;
+
+    var handler = StripeCheckout.configure({
+        key: 'pk_test_O1R4lqAzAEMJVAKOCiGEK2tR',
+        token: function(token) {
+            alert(token.id);
+        }
+    });
+
+    $('#meeting-room-form-submit').on('click', function(e) {
+        // Open Checkout with further options
+        handler.open({
+            name: 'Wellington House',
+            description: 'Meeting Room Booking',
+            currency: "gbp",
+            amount: discountedTotal * 100
+            /* We reserve the right to cancel booking without refund if this value is tampered with. */
+            /* We automatically confirm post checkout that this value is correct with regards to hours booked. */
+            /* Don't think you're being clever by changing it. */
+        });
+        e.preventDefault();
+    });
+
+    // Close Checkout on page navigation
+    $(window).on('popstate', function() {
+        handler.close();
+    });
+
+    $('.timeslot').click(function(){
+        if ($(this).hasClass('temp-reserved')) {
+            $(this).removeClass('temp-reserved');
+            total -= 15;
+            discountedTotal = total;
+        } else {
+            $(this).addClass('temp-reserved');
+            total += 15;
+            discountedTotal = total;
+        }
+        if (total >= 90) discountedTotal = 90;
+        $('#subtotal').val('£' + discountedTotal);
+        $('#payment-button').attr('data-amount', discountedTotal * 100);
+    });
+});
+</script>
+
 <section class="intro meeting-rooms" data-speed="4" data-type="background">
     <div class="container">
         <div class="col-md-14">
@@ -134,15 +183,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-7">
-                    <script id="payment-button"
-                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                            data-key="pk_test_O1R4lqAzAEMJVAKOCiGEK2tR"
-                            data-amount="2000"
-                            data-name="Wellington House"
-                            data-currency="gbp"
-                            data-description="Meeting Room Booking"
-                           >
-                    </script>
+                    <button id="meeting-room-form-submit" type="submit" class="btn btn-default">Pay Now</button>
                 </div>
             </div>
 

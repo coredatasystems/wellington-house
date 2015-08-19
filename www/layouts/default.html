@@ -23,79 +23,7 @@
     <script src="/javascript/bootstrap.js" defer></script>
     <script src="/javascript/parallax.js" defer></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5j_HO-V0Fcm1D-ujHmWSK43ZIZXCh0Eo"></script>
-
-    <script type="text/javascript">
-
-        var mapHeight, mapOffset, windowHeight;
-        var markerSet = false;
-
-        $(function(){
-            mapHeight = $('#map-section').height();
-            mapOffset = $('#map-section').offset().top;
-            windowHeight = $(window).height();
-
-            $(window).resize(function(){
-                mapOffset = $('#map-section').offset().top;
-                windowHeight = $(window).height();
-            })
-        });
-
-        function dropPin(map, coordinates) {
-            if (!markerSet) {
-
-                var mapVisible = -mapOffset + $(window).scrollTop() + windowHeight;
-
-                if (mapVisible > mapHeight / 1.7) {
-
-                    var locationMarker = new google.maps.Marker({
-                        position: coordinates,
-                        map: map,
-                        icon: '/images/map-marker.png',
-                        animation: google.maps.Animation.DROP
-                    });
-
-                    markerSet = true;
-                }
-            }
-        }
-
-        function initialize() {
-
-            var wellingtonHouseCoord = new google.maps.LatLng(51.8843375, 0.8946597);
-            var mapCenterCoord = new google.maps.LatLng(51.8863375, 0.8946597);
-
-            var mapOptions = {
-                center: mapCenterCoord,
-                zoom: 15,
-                scrollwheel: false
-            };
-
-            var map = new google.maps.Map(document.getElementById('map-canvas'),
-                    mapOptions);
-
-
-            $(window).scroll(function(){
-                dropPin(map, wellingtonHouseCoord);
-            }).resize(function(){
-                dropPin(map, wellingtonHouseCoord);
-            });
-
-            dropPin(map, wellingtonHouseCoord);
-
-            google.maps.event.addDomListener(window, 'resize', function() {
-                map.setCenter(wellingtonHouseCoord);
-            });
-
-            map.parallaxSpeed = 8;
-            mapParallax(map);
-
-        }
-
-        google.maps.event.addDomListener(window, 'load', initialize);
-
-
-    </script>
+    <%= if @item[:map_widget] then render '/partials/googlemaps_embed' end%>
 
 </head>
 
@@ -132,8 +60,6 @@
                 <li><a href="/#enquiries">contact</a></li>
             </ul>
         </nav><!--/.nav-collapse -->
-
-
 
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
