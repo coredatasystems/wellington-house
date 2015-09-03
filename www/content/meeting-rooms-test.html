@@ -67,7 +67,7 @@ $(function(){
         <div class="text-container lead">
 
             <h2>Hiring Meeting Rooms</h2>
-            <p>We provide the option to hire meeting rooms for a day or a number of hours whenever needed. Our meeting rooms are equipped with a number of plug sockets and projectors for giving important presentations. You can book any of our meeting rooms using our automated system on this website (Coming September 2015).</p>
+            <p>We provide the option to hire meeting rooms for a day or a number of hours whenever needed. Our meeting rooms are equipped with a number of plug sockets and projectors for giving important presentations. You can book any of our meeting rooms using our automated system below.</p>
 
             <ul>
                 <li>Meeting room access costs £15 per hour or £90 for the full day.</li>
@@ -76,6 +76,44 @@ $(function(){
 
         </div>
 
+        <div id="meeting-room-booking-outside">
+            <div id="meeting-room-booking-container"></div>
+        </div>
+
+        <br/>
+        <br/>
+        <form action="" method="POST" class="form-horizontal">
+            <div class="form-group">
+                <label for="inputName3" class="col-sm-4 control-label">Cost</label>
+                <div class="col-sm-7">
+                    <input id="subtotal" type="text" disabled="disabled" class="form-control" id="inputName3" placeholder="£0.00">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputName3" class="col-sm-4 control-label">Full Name</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="inputName3" placeholder="Full Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputName3" class="col-sm-4 control-label">Name of Business</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="inputName3" placeholder="Name of Business">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
+                <div class="col-sm-7">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-7">
+                    <button id="meeting-room-form-submit" type="submit" class="btn btn-default">Pay Now</button>
+                </div>
+            </div>
+
+        </form>
         <br/>
     </div><!-- /.container -->
 </section>

@@ -13,6 +13,10 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
+compile '/php/*/' do
+    nil
+end
+
 compile '*' do
   if item[:extension] == 'css'
     # don’t filter stylesheets
@@ -22,6 +26,10 @@ compile '*' do
     filter :erb
     layout 'default'
   end
+end
+
+route '/php/*/' do
+    item.identifier.chop + '.' + item[:extension]
 end
 
 route '*' do
