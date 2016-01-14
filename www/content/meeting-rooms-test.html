@@ -3,7 +3,13 @@
 <script src="/javascript/meeting-room-interface.js"></script>
 <script>
     $(function(){
-        $('#meeting-room-booking-container').meeting_room_init();
+        $('#meeting-room-booking-container').meeting_room_init('meeting-room-booking-month');
+        $('#week_advance_btn').click(function(){
+            $('#meeting-room-booking-container').advance_week();
+        });
+        $('#week_retreat_btn').click(function(){
+            $('#meeting-room-booking-container').advance_week();
+        });
     });
 </script>
 <script>
@@ -14,7 +20,7 @@ $(function(){
     var handler = StripeCheckout.configure({
         key: 'pk_test_O1R4lqAzAEMJVAKOCiGEK2tR',
         token: function(token) {
-            $.redirect("/login.php",{ stripe_token: token.id, email: token.email, });
+            $.redirect("/php/stripe-charge.php", { stripe_token: token.id, email: token.email, amount: discountedTotal * 100 });
 
         }
     });
@@ -74,6 +80,12 @@ $(function(){
                 <li>Payment should be made by cash on arrival at reception the day of the booking.</li>
             </ul>
 
+        </div>
+
+        <div class="container meeting-room-week-navigation">
+            <div id="week_retreat_btn">&lt;</div>
+            <h2 id="meeting-room-booking-month"></h2>
+            <div id="week_advance_btn">&gt;</div>
         </div>
 
         <div id="meeting-room-booking-outside">

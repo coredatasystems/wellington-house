@@ -8,10 +8,13 @@ var meeting_room_times = ["9:00 - 10:00",
                           "16:00 - 17:00"];
 
 jQuery.fn.extend({
+
     advance_week: function () {
         this.data('curMonday').setDate(this.data('curMonday').getDate() + 7);
         this.get_meeting_week('new');
         this.data('booking_table').addClass('transitioning');
+        var dateOnMonday = new Date(this.data('curMonday').getTime());
+        this.updateMonthName(dateOnMonday);
         window.setTimeout(function(table){
             $('.timeslot:not(.new)').remove();
             $('.wholeday.mod-btn:not(.new)').remove();
@@ -20,6 +23,7 @@ jQuery.fn.extend({
             table.removeClass('transitioning');
         }, 500, this.data('booking_table'));
     },
+
     get_meeting_week: function(class_addition) {
         class_addition = typeof class_addition !== 'undefined' ? class_addition : '';
 
@@ -37,8 +41,23 @@ jQuery.fn.extend({
 
         }
     },
-    meeting_room_init: function () {
 
+    updateMonthName: function (dateOnMonday) {
+        var dateOnFriday = new Date(dateOnMonday.getTime());
+        dateOnFriday.setDate(dateOnFriday.getDate() + 4);
+
+        if (dateOnMonday.getMonth() == dateOnFriday.getMonth()) {
+            this.data('month_header').text(monthName(dateOnMonday));
+        } else {
+            this.data('month_header').text(monthName(dateOnMonday) + '/' + monthName(dateOnFriday));
+        }
+    },
+
+    meeting_room_init: function (monthHeaderID) {
+
+        /* Set Up Month Header */
+
+        this.data('month_header', $('#' + monthHeaderID))
         /* Create Booking Table, and header row: */
         this.data('booking_table', $('<table id="meeting-room-booking" class="table table-bordered"></table>'));
         var booking_header = $('<thead></thead>');
@@ -66,7 +85,12 @@ jQuery.fn.extend({
                 day = date.getDay(),
                 diff = date.getDate() - day + (day == 6 ? 8 : 1); // If day is saturday, shift forward to next monday
 
-        this.data('curMonday', new Date(date.setDate(diff)));
+        var dateOnMonday = new Date(date.setDate(diff))
+        var fixedMonday = new Date(dateOnMonday.getTime());
+
+        this.data('curMonday', fixedMonday);
+
+        this.updateMonthName(dateOnMonday);
 
         /* Loop through all times and create a new row for each */
         this.data('main_booking_rows', []);
@@ -97,6 +121,13 @@ function ordinal(i) {
     return i + "th";
 }
 function dayName(date) {
-    var daysOfWeek = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+    var daysOfWeek;
+    daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return daysOfWeek[date.getDay()];
+}
+function monthName(date) {
+    var monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    return monthNames[date.getMonth()];
 }

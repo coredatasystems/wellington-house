@@ -19,6 +19,7 @@
         $d = DateTime::createFromFormat('Y-m-d', $date);
         $d->modify('+6 days');
         $end_date = $d->format('Y-m-d');
+        echo "$end_date";
     } else {
         die("Error: Invalid range value. Values accepted: 'day', 'week'.");
     }

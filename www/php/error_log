@@ -1,0 +1,20 @@
+[03-Dec-2015 15:02:12 Europe/London] PHP Warning:  Xdebug MUST be loaded as a Zend extension in Unknown on line 0
+[03-Dec-2015 15:02:12 Europe/London] PHP Warning:  Module 'xdebug' already loaded in Unknown on line 0
+[03-Dec-2015 15:08:29 Europe/London] PHP Warning:  Xdebug MUST be loaded as a Zend extension in Unknown on line 0
+[03-Dec-2015 15:08:29 Europe/London] PHP Warning:  Module 'xdebug' already loaded in Unknown on line 0
+[03-Dec-2015 15:08:29 Europe/London] PHP Fatal error:  Class 'Google_Service_Calendar' not found in /home/betawellingtonho/public_html/php/quickstart.php on line 7
+[03-Dec-2015 15:08:29 Europe/London] PHP Stack trace:
+[03-Dec-2015 15:08:29 Europe/London] PHP   1. {main}() /home/betawellingtonho/public_html/php/quickstart.php:0
+[03-Dec-2015 15:08:57 Europe/London] PHP Warning:  Xdebug MUST be loaded as a Zend extension in Unknown on line 0
+[03-Dec-2015 15:08:57 Europe/London] PHP Warning:  Module 'xdebug' already loaded in Unknown on line 0
+[03-Dec-2015 15:08:57 Europe/London] PHP Fatal error:  Class 'Google_Service_Calendar' not found in /home/betawellingtonho/public_html/php/quickstart.php on line 7
+[03-Dec-2015 15:08:57 Europe/London] PHP Stack trace:
+[03-Dec-2015 15:08:57 Europe/London] PHP   1. {main}() /home/betawellingtonho/public_html/php/quickstart.php:0
+[03-Dec-2015 15:13:28 Europe/London] PHP Warning:  Xdebug MUST be loaded as a Zend extension in Unknown on line 0
+[03-Dec-2015 15:13:28 Europe/London] PHP Warning:  Module 'xdebug' already loaded in Unknown on line 0
+[03-Dec-2015 15:14:34 Europe/London] PHP Warning:  Xdebug MUST be loaded as a Zend extension in Unknown on line 0
+[03-Dec-2015 15:14:34 Europe/London] PHP Warning:  Module 'xdebug' already loaded in Unknown on line 0
+[03-Dec-2015 15:15:21 Europe/London] PHP Warning:  Xdebug MUST be loaded as a Zend extension in Unknown on line 0
+[03-Dec-2015 15:15:21 Europe/London] PHP Warning:  Module 'xdebug' already loaded in Unknown on line 0
+[03-Dec-2015 15:16:29 Europe/London] PHP Warning:  Xdebug MUST be loaded as a Zend extension in Unknown on line 0
+[03-Dec-2015 15:16:29 Europe/London] PHP Warning:  Module 'xdebug' already loaded in Unknown on line 0

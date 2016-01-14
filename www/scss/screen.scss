@@ -33,6 +33,7 @@ section {
   background-color: white;
   border-radius: 0px;
 
+
   .container {
     position: relative;
   }
@@ -72,7 +73,7 @@ section {
     float: none;
     font-family: "Times New Roman";
     text-align: center;
-    font-size: 3em;
+    font-size: 3rem;
     font-style: italic;
     font-weight: bold;
     margin: 0px auto;
@@ -110,11 +111,22 @@ section {
       &:first-child {
         border-left: none;
       }
+
+      @media (max-width: $screen-sm-min) {
+        display: block;
+        border-left: none;
+        font-size: 1.6em;
+      }
+
     }
     a {
       padding: 0px 15px 0px 20px;
       color: $gray-light;
       -webkit-transition: padding 200ms;
+
+      @media (max-width: $screen-sm-min) {
+        line-height: 1.3em;
+      }
 
       &:hover {
         background: none;
@@ -137,9 +149,9 @@ section {
 }
 .intro {
   &.index {
-    background: url('/images/building_hero.jpg') 50% 0 fixed;
-    background-size: cover;
-    padding: 150px 0;
+    background: url('/images/building_hero.jpg') 50% -40px;
+    background-size: 1500px 120%;
+    padding: 50px 0;
   }
   &.office-space {
     background: url('/images/view_hero.jpg') 50% -40% fixed;
@@ -147,21 +159,30 @@ section {
   }
   &.office-inside {
     height: 300px;
-    background: url('/images/empty-office.png') 50% -100% fixed;
+    background: url('/images/empty-office.png') 50% 40%;
     padding: 80px 0;
   }
   &.client-list {
-    background: url('/images/reception.jpg') 50% 180% fixed;
+    background: url('/images/reception.jpg') 50% -300px fixed;
+    @media(max-width: $screen-xs-max){
+      background-attachment: scroll;
+    }
     padding: 80px 0;
-    background-size: 100% auto;
+    background-size: cover;
   }
   &.virtual-offices {
-    background: url('/images/virtual-office.jpeg') 50% 400% fixed;
+    background: url('/images/virtual-office.jpeg') 50% -200px fixed;
     padding: 80px 0;
-    background-size: 100% auto;
+    @media(max-width: $screen-xs-max){
+      background-attachment: scroll;
+    }
+    background-size: cover;
   }
   &.meeting-rooms {
     background: url('/images/meeting-rooms.jpg') 50% 10% fixed;
+    @media(max-width: $screen-xs-max){
+      background-attachment: scroll;
+    }
     padding: 80px 0;
     background-size: 100% auto;
   }
@@ -274,10 +295,29 @@ footer section {
     max-height: 200px;
     width: auto;
     height: auto;
+    @media(max-width: $screen-xs-max){
+      max-width: 90px;
+      margin: 0 10px;
+    }
   }
 }
 
 /* Meeting Room Booking */
+
+.meeting-room-week-navigation {
+  text-align: center;
+
+  * {
+    display: inline-block;
+  }
+
+  #week_retreat_btn, #week_advance_btn {
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 3rem;
+  }
+}
 
 #meeting-room-booking-outside {
   width: 100%;
@@ -330,6 +370,13 @@ footer section {
     }
   }
 
+  .timeslot.reserved {
+    background-color: $gray-lighter;
+    &:before {
+      content: 'unavailable';
+    }
+  }
+
   .timeslot.temp-reserved {
     background-color: $brand-success;
     &:before {
@@ -362,7 +409,7 @@ footer section {
 
 /* Virtual Offices */
 .text-container {
-  font-size: 1.3em !important;
+  font-size: 1.2em !important;
 }
 
 /* FAQ */
